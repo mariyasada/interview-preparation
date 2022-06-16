@@ -1,0 +1,23 @@
+1.difference between java and javascript?
+
+java is object oriented programming langauge whreas javascript is object based scripting language.
+java applications can run on any virtual machine or browser whereas javascript code used to run only on browser now it can run on server via node.js
+object of java is classbased whereas in javascript it is prototype based
+java supports multithreading whre as javascript is singlethreaded language
+java used for mainly backend whereas javascript used for frontend and backend also.
+java requires jdk to run the code whreas javascript only needs text editor and browser console
+
+2.multithreaded vs singlthreaded
+
+singlethreaded: only one line of code can execute at a time
+Multithreading is a process of executing multiple threads simultaneously. means operating system has the ability to enable more than one user at a time without requiring multiple copies of a program running on the computer.
+
+3. what is ecmascript in javascript
+European Computer Manufacturer's Association.
+ecmascript is a specification which is blueprint of creating a scripting language. and javascript is a implementation of that blueprint. It is a trademark scripting language specification.
+
+4.How javascript works?
+Everything in javascript happens inside the execution context. execution context is like a box container which has two parts first one is memory which is also calale dvariable environment where all the variables are stored, second one is code(thread of execution) where all the code is executed line by line.
+javascript is a synchronous single threaded languge. single threaded means execute one line at a given time. synchronous means executed code in some specific order. the next line will be executed after the completion of current line.
+
+5.hoisting of variables and functions
