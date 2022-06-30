@@ -55,5 +55,5 @@ function flatten()
 ///* prototype is an existing inbuilt functionality in javascript, whenever we craete a function, javascript adds a prototype to that function. prototype is an object prototype allows you to add new properties and methods to array object.*/ */
 //prototype is a property available with all JavaScript objects.
 
-// Array.prototype.flatten=flatten;
+Array.prototype.flatten=flatten; // because of prototype we can access this flatten function for any array.
 console.log(input.flatten());

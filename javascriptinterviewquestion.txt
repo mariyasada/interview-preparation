@@ -21,3 +21,12 @@ Everything in javascript happens inside the execution context. execution context
 javascript is a synchronous single threaded languge. single threaded means execute one line at a given time. synchronous means executed code in some specific order. the next line will be executed after the completion of current line.
 
 5.hoisting of variables and functions
+ How web works?
+
+ how web page are rendered on screen, how all things happened behind the scene, so computers connected to web are called clients and server.clients means the your pc,mobile or laptop which is connected to wifi and browsers are avilable on client machine.
+ so clients and servers have their on ip address. servers are computers that stores the webpages and daabases,app etc. when client want to access the webpages the copy of the webpages are downloaded from server to client machines.
+
+ so, when the client type www.github.com and entered the key, client give the request to browser that hey i want to render this website. so every website has DNS address, so browser goes to DNS server and find the real address of that server. after recieving the DNS address it send the http request to server where the webpages are stored.if the webpages available on that server then server send the data into small chunks called packets to client, these packets have client ip address and server ip address. data sent between client and server using tcp/ip connection. the browser assembles the all packets and display it to you as whole webpage.
+the response from server is in html format so browser creates a dom and diplays on screen. so often html files contains link and script tag. it sens the request for css and javscript file to server
+
+IP address is look like 64.67.213.30.it is not easy to remember that's why DNS server invented.

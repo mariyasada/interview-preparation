@@ -155,3 +155,7 @@ display.increment();
 //In other words, when multiple components work together to have a shared state and handle logic together, they are called compound components.
 
 //When you click on an option, select knows which option you clicked. Like select and option, the components share the state on their own, so you don’t have to explicitly configure them.
+
+
+
+
