@@ -138,7 +138,7 @@ console.log(mostFreuentArr([2,4,78,9,5,78,3,2,78,89]));
 const checkIfAdditionEqualsTarget=(arr,target)=>{
     for(let i=0;i<arr.length;i++)
     {
-        for(let j=1+1;j<arr.length;j++)
+        for(let j=1;j<arr.length;j++)
         {
             if(arr[i] +arr[j]===target)
             {

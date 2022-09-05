@@ -35,3 +35,50 @@ Function.prototype.myBind=function(...args)
 
 let myPrintName=getFullName.myBind(person,"dehradun","uttarakhand");
 myPrintName("India");
+
+
+// call pollyfill
+const myObj1={
+    name:"mariya",
+    getName:function(greet,greet1)
+    {
+        console.log(this.name + " " +greet +" "+greet1) 
+    }
+}
+
+const myobj2={
+    name:"sada"
+}
+
+myObj1.getName.call(myobj2,"hello"); //sada hello
+const callfun=myObj1.getName.bind(myobj2,"hhdhsahdhs");
+callfun();
+
+Function.prototype.myCall=function(obj,...args){
+    obj.getName=this; //getname function , here we are assigning the method to myobj object using . notation after that we are calling that
+    obj.getName(...args);  // calling with arguments
+}
+myObj1.getName.myCall(myobj2,"hello","ji");
+
+
+//apply method
+Function.prototype.myApply=function(obj,args){
+    obj.getName=this; //getname function
+    obj.getName(...args);  // calling with arguments
+}
+
+myObj1.getName.myApply(myobj2,["hello","morning"]);
+
+// mybind also
+
+Function.prototype.myBind1=function(obj,...args)
+{
+    console.log(this); // object's getname method;
+    obj.getName=this;
+    return function(...arg1) {
+       let output= obj.getName(...args,...arg1);
+       return output;
+    }
+}
+const bindcall=myObj1.getName.myBind1(myobj2,"goodnooon");
+bindcall("morning");

@@ -248,3 +248,44 @@ const rotateNumberByXPostion=(number,rotation)=>{
     return parseInt(rotateStr,10)// convert  stringninto decimal
 }
 console.log(rotateNumberByXPostion(1234,3));
+
+// print number in decending order in every 1 second and if it it 0 then print print bang band
+
+function print(number){
+    let timerId;
+
+    timerId=setInterval(()=>{
+      if(number !==0)
+      {
+        console.log(number);
+        number--;
+       
+      }
+      else{
+         clearInterval(timerId);
+         console.log("bang bang");
+      }
+    },1000)
+
+}
+
+console.log(print(27));
+
+//arr1=[1,2,3,4,5,6] arr2=[1,7,2,3,4,5]; o/p= 4 =>> comman elements in both array [2,3,4,5];
+
+const findCommanElement=(arr1,arr2)=>{
+    let newArr=[];
+    for(let i=0;i<arr1.length;i++)
+    {
+        for(let j=0;j<arr2.length;j++)
+        {
+        if(arr1[i]===arr2[j])
+        {
+            console.log("hii");
+           newArr.push(arr1[i]);
+        }
+    }
+    }
+  return newArr.length;
+}
+console.log(findCommanElement([1,2,3,4,5,6], [9,7,2,3,4,5]))

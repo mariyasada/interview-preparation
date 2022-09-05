@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>slider</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="carousel">
+      <div class="carousel-track w-100 pos-rel">
+        <div class="slider current-slide">
+          <img
+            src="https://images.unsplash.com/photo-1611605645802-c21be743c321?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+            alt="image"
+            class="carousel-image"
+          />
+        </div>
+        <div class="slider">
+          <img
+            src="https://images.unsplash.com/photo-1639080573074-c77a33bf4e6b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+            alt="image"
+            class="carousel-image"
+          />
+        </div>
+        <div class="slider">
+          <img
+            src="https://images.unsplash.com/photo-1648994547202-5b9d5864de07?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+            alt="image"
+            class="carousel-image"
+          />
+        </div>
+        <button class="carousel-btn btn-left">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+            <path
+              d="M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z"
+              class="w-100"
+            />
+          </svg>
+        </button>
+        <button class="carousel-btn btn-right">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+            <path
+              d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"
+              class="w-100"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="dots-navigation">
+        <button class="dot current-slide"></button>
+        <button class="dot"></button>
+        <button class="dot"></button>
+      </div>
+    </div>
+    <div id="clock"><p id="text">Hello</p></div>
+    <script src="index.js"></script>
+  </body>
+</html>

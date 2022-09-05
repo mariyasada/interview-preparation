@@ -59,3 +59,43 @@ const numbers=[2,4,5,6,7,9,8];
     return output;
  }
  console.log(numbers.filterEvenNumbers(isEven));
+
+ // find method pllyfill
+ // find returns the first element which passed the test provided by callback function
+
+ Array.prototype.findNumber=function (callback){
+    let output="";
+    for(let i=0;i<this.length;i++)
+    {
+        if(callback(this[i]))
+        {
+            output +=this[i];
+            break;
+        }
+    }
+    return output;
+ }
+ console.log(numbers.findNumber(isEven));
+
+ ///reduce pollyfill
+
+ Array.prototype.myReduce=function(callback,initialValue){
+    if(initialValue===undefined && this.length===0)
+    {
+       throw new Error("array can't be empty");
+    }
+    else{
+        let acc=initialValue ?? this[0];
+        let currentIndex=initialValue===undefined ?1:0;
+        for(let i=currentIndex;i<this.length;i++)
+        {
+            acc=callback(acc,this[i]);
+        }
+        return acc;
+    }
+ }
+ const sum= (acc,curr)=>acc+curr;
+ console.log([1,2,3,4].myReduce(sum,0));
+
+
+

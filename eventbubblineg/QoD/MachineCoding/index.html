@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"
+    />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: sans-serif;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .fa {
+        font-size: 40px;
+      }
+
+      .fa-star-o:before {
+        content: "\f006";
+        color: #141414;
+      }
+
+      .fa-star:before {
+        content: "\f005";
+        color: #d56e0c;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="star"></div>
+    <p data-animal-type="fish" class="para">Salmon</p>
+    <script src="./index.js"></script>
+  </body>
+</html>

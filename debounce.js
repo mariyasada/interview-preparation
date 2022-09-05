@@ -19,12 +19,25 @@ const debounce=function(func,delay)
      //set up new timer
       timer=setTimeout(()=>{
         func.apply(this,args)
-
       },delay)
     }
 }
 
 const betterFunction=debounce(getData,500);
+
+
+//kushank's function
+const debounce1 = (func, delay) => {
+  let timerId = null;
+  return (...args) => {
+    if (timerId) {
+      clearTimeout(timerId);
+    }
+    timerId = setTimeout(() => func(...args), delay);
+  };
+};
+
+const debouncedFunc = debounce1(getData, 500);
 
 // so what happens i this implementation when user type something debounce reset the timer with cleartimeout
 // ..args allows you to collect all the arguments of the fn() function into an array args. if debounce has more than two arhuents
@@ -55,5 +68,21 @@ const myThrottled=function(func,delay){
     }
     }
 }
+// kushank's
+const myThrottled1=function(func,delay){
+    let flag=true;
+    return function(...args)
+    {   
+        if(flag)
+        {
+         func(...args);
+            flag=false;
+            setTimeout(()=>{
+         flag=true;             
+      },delay)
+    }
+    }
+}
 
-const betterthrottle=myThrottled(expensiveThrottle,1000);
+
+const betterthrottle=myThrottled1(expensiveThrottle,1000);

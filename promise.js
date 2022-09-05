@@ -50,7 +50,8 @@ const myFunction={
     }
 }
 const value=await myFunction;
-console.log(value); // 2 , object that implements only then function, if you change the name getPrint instead of getName or anything it will give undefined as result.
+console.log(await myFunction);
+console.log(value); // 2 , object that implements only then function, if you change the name getPrint instead of then or anything it will give undefined as result.
 
 // guess the output
 const promise = new Promise((resolve, reject) => {

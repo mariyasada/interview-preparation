@@ -1,0 +1,95 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.carousel .carousel-track {
+  height: 550px;
+  max-width: 800px;
+  overflow: hidden;
+}
+
+.carousel-track .slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-track .carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-btn {
+  position: absolute;
+  z-index: 1;
+  width: 2rem;
+  padding: 8px;
+  background-color: whitesmoke;
+  cursor: pointer;
+}
+.dots-navigation {
+  position: absolute;
+  bottom: -30px;
+  display: flex;
+  justify-content: space-around;
+  width: 90px;
+  align-items: center;
+}
+
+.dots-navigation .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: black;
+  cursor: pointer;
+}
+
+.dots-navigation .dot.current-slide {
+  background-color: dodgerblue;
+  border: 1px solid transparent;
+}
+.carousel-btn.btn-left {
+  left: 10px;
+  top: 45%;
+}
+
+.carousel-btn.btn-right {
+  right: 10px;
+  top: 45%;
+}
+
+.w-100 {
+  width: 100%;
+}
+.pos-rel {
+  position: relative;
+}
+
+.pos-abs {
+  position: absolute;
+}
+#clock #text {
+  color: red;
+}
+#clock #text {
+  color: yellow;
+}
+p {
+  color: blue;
+}
+
+@media screen and (max-width: 460px) {
+  .carousel .carousel-track {
+    height: 250px;
+  }
+}

@@ -45,3 +45,14 @@ object2.__proto__=object;
 console.log(object2.city)// modasa
 console.log(object2.name)// bhakti
 console.log(object2.getIntro())// bhakti from modasa
+
+const myobj={
+    name:"mariya",
+    city:"mumbai",
+    getIntro:function(){
+        console.log(this.name +"from "+ this.city);
+    }
+}
+ const object2={name:"tushar"};
+ object2.__proto__=myobj;
+ object2.getIntro();

@@ -57,3 +57,35 @@ function flatten()
 
 Array.prototype.flatten=flatten; // because of prototype we can access this flatten function for any array.
 console.log(input.flatten());
+
+
+Array.prototype.flattenNew=function(depth){
+  let output=[];
+  this.forEach(arr=>{
+    if(Array.isArray(arr) && depth>0)
+    {
+       output.push(...arr.flattenNew(depth-1))
+    }
+    else{
+      output.push(arr)
+    }
+  })
+  return output
+}
+
+console.log(input.flattenNew(12));
+
+//  tusar's question
+function createFunc(){
+ const nums= [1,2,3,4,5];
+ const arr = [];
+ for(var i=0; i < nums.length ; i++){
+   arr.push(function(){
+     console.log(nums[i]);
+   });
+ }
+ return arr;
+};
+
+const confi = createFunc();
+confi[0]();

@@ -309,3 +309,4 @@ console.log(fizzBuzz1())
     return newArr;
  }
  console.log(findProduct([1,2,3,4,5]));
+

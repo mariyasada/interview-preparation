@@ -5,12 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .red {
+        height: 100px;
+        width: 100px;
+        background-color: red;
+        z-index: 1;
+      }
+      .blue {
+        height: 200px;
+        width: 200px;
+        background-color: blue;
+        position: absolute;
+        top: 8rem;
+        z-index: -1;
+      }
+    </style>
   </head>
   <body>
     <h1>Hello</h1>
     <button class="clickMe">Click me</button>
     <input onkeypress="betterFunction()" />
     <button onclick="betterthrottle()">Expensive throttled</button>
-    <script src="./debounce.js"></script>
+
+    <!-- css examples -->
+    <div class="red">Hello</div>
+    <div class="blue">Hello</div>
+    <p>&copy</p>
+
+    <script src="./clouser.js"></script>
   </body>
 </html>
