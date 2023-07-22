@@ -55,6 +55,7 @@ const callfun=myObj1.getName.bind(myobj2,"hhdhsahdhs");
 callfun();
 
 Function.prototype.myCall=function(obj,...args){
+    console.log(this);
     obj.getName=this; //getname function , here we are assigning the method to myobj object using . notation after that we are calling that
     obj.getName(...args);  // calling with arguments
 }

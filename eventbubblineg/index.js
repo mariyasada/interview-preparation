@@ -6,8 +6,15 @@ document.querySelector("#parent").addEventListener("click",(e)=>{
 },false)
 document.querySelector("#child").addEventListener("click",(e)=>{
     console.log("child click");
-    //  e.stopPropagation();
+    e.stopImmediatePropagation();
+    //e.stopPropagation();
+     
 },true)
+document.querySelector("#child").addEventListener("click",(e)=>{
+    console.log("child click 3");
+    
+},true)
+
 // here when we adding eventlistner it takes three parameter , event,callback,usecapture. if usecapture is true then event capturing happents, by default it is false so event bubbling happened
 
 //event bubbling means it bubbles up when we fire an event.

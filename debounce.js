@@ -1,5 +1,10 @@
 // debounce makes sure that the code triggered only when user has finished typing, or we can say that user are not active at certain time dalay.
 //suppose let's take an example we craete a function getData() this function is call when user press the key or enter text in input
+
+// practice data attribute for css
+console.log(document.querySelector(".fish").dataset.animalType);
+//ends here data wala
+
 let counter=0;
 const getData=()=>{
     console.log("fetching Data",counter++);

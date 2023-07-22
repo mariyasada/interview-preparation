@@ -79,7 +79,7 @@ console.log(input.flattenNew(12));
 function createFunc(){
  const nums= [1,2,3,4,5];
  const arr = [];
- for(var i=0; i < nums.length ; i++){
+ for(var i=0; i < nums.length; i++){
    arr.push(function(){
      console.log(nums[i]);
    });
@@ -88,4 +88,5 @@ function createFunc(){
 };
 
 const confi = createFunc();
+console.log(confi);
 confi[0]();

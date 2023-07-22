@@ -37,7 +37,7 @@ let sum1= function(a){
         {
             return sum1(a+b); //calling sum function here // here it makes a closure that takes a value of a and do sum of two values 
         }
-        return b;
+        return a;
     }
 }
 console.log(sum1(1)(2)(3)());

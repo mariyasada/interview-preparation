@@ -1,13 +1,13 @@
-// function x(){
-//     var a=10;
-//     function y(){
-//         console.log(a);
-//     }
-//     return y;
-// }
-// var z=x();
-// console.log(z);
-// z();
+function x(){
+    var a=10;
+    function y(){
+        console.log(a);
+    }
+    return y;
+}
+var z=x();
+console.log(z);
+z();
 
 // when we run a program the execution context of x is created  and we return function y from that, after returning the function along with it's lexical scope the x's execution context was deleted. and in var z have function along with it's lexical scope.
 
@@ -97,9 +97,9 @@ setTimeout(()=>{
      m=false;
     console.log("hello");
 },1000);
+m=false;
 
 setInterval(() => {
-    
     if(m){
         console.log("hmmm");
     }   
@@ -109,6 +109,15 @@ setInterval(() => {
 //     console.log("hhhh");
 // }
 
+// remove duplicates from array
+const arr=["Mariya","sada",1,2,3,2,4,1,"Mariya","sada",4,6,7];
+console.log(arr.filter((item,index)=>arr.indexOf(item)===index));
+
+//second method
+const unique=[...new Set(arr)];
+
+// third
+console.log(arr.reduce((acc,arr)=>acc.includes(arr)?acc:[...acc,arr],[]));
 
 
 

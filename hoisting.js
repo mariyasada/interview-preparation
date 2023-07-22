@@ -19,12 +19,14 @@ var getName1=function(){
 }
 
 var getName=()=>{
-    console.log("hi");
+     console.log("hi");
 }
 console.log(z); //8
 printName(); //hello mariya
 console.log(getName)// ()=>{ console.log("hi")}
-console.log(getName());
+console.log(getName())
+// do you think why console prints undefined after every execution of results?
+// because  console.log does not  explicitly return something 
 
 //function invocation in call stack
 
@@ -56,9 +58,18 @@ function a(){
 console.log(x)//10
 console.log(window.x) //10
 console.log(this.x)//10
-console.log(a)// error: a is not defined;
+console.log(a,"what's wrong with that")// error: a is not defined;
 
 //  UNDEFINED AND NOT DEFINED
 //undefined IS NOT EMPTY , UNDEFINED MEANS VARIABLE IS IN MEMORY BUT STILLNOT ASSIGNNG ANY VALUE
 // NOT DEFINED : THE VARIABLE IS NOT IN GLOBAL EXECUTION CONTEXT MEMORY
 //UNDEFINED IS PLACEHOLDER FOR VARIBLE TILL THE USER HAS ASSIGN SOME VALUE 
+
+var maa=9;
+function mariya()
+{
+    var maa=10;
+    console.log(maa,"hello");
+}
+console.log(maa,"outer");
+mariya();

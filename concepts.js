@@ -33,11 +33,11 @@ arr2.splice(2);//[3,4,6,7,9]; deleted array    //returns deleted elements
 
 arr2.splice(2,3); //[3,4,6]
 //[1,2,7,9] original array
-arr2.splice(2,2,[4,5]); //[7,9]
+arr2.splice(2,2,[4,5]); //[3,4]
 arr2.splice(2,3,4,5,6);//[3,4,6]
 //original array[1,2,4,5,6,7,9]
 arr2.splice(2,0,"✔","❌"); //[]
-// original array [1,2,"✔","❌",4,5,6,7,9]
+// original array [1,2,"✔","❌",3,4,6,7,9]
 arr2.splice(-3,2);//[6,7,]
 //original array [1,2,"✔","❌",4,5,9]
 

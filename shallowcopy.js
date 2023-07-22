@@ -1,4 +1,4 @@
-// there are two eays to copy object or arrays to another object and array
+// there are two ways to copy object or arrays to another object and array
 
 let x="mariya";
 let y="sada";

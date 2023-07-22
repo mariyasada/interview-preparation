@@ -29,6 +29,12 @@ myobject.printname();
 //  if constructor defined using normal function then we can create an new instance of object using new operator
 
 //but  if the function defined using arrow function and try to create a new instance of object using new operator it gives type error that car is not a contsructor function
+function MyCar(name,model){
+  this.name=name;
+  this.model=model;
+}
+const alto=new MyCar("suzuki",2010);
+console.log(alto);
 
 const Car=(color)=>{
     this.color=color;
