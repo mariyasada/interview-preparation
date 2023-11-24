@@ -1,0 +1,95 @@
+How redux, react-redux and redux toolkit diffrent from each other?
+
+Redux:
+Redux is a state management library. when we have to pass certain data from parent to child then context api is a good option but when it comes to sharing a data at same level component than redux is a good option. we can use redux for diffrent libraries like angular,vueetc but it works well with react.
+
+flux like flow with single store.
+
+react-redux:
+binding react and redux together. It offers useselector and useDispatch hook.
+
+redux-toolkit:
+if anyone wants to use redux with react then it's best practice to use redux toolkit. It uses the middleware that allows you to write an actions creator that returns the function instead of action.
+thunk used to delay the dispatch of action.
+
+main three pillars of redux or redux toolkit:
+redux: 1. store:==centarlized store so any component can use that store to access the state of application(any level component)
+2. actions : actions are events they are only way to send data to store. action is a object which have type and payload property for example we have counter 1. incerement by 2 2. decrement by 5 these are two actions
+
+3.reducers: reducers are pure function that takes state and actions as a parameter ====> takes current state and perform some actions and return new state and that new state  reflects to the store and UI changed based on new state.
+
+state is predictable in redux. 
+debugging is easy
+unidirectional flow in redux means data can not sent from child to parent.
+
+
+dependencies: provider comes from react-redux while combineReducers and creteStore comes from only redux because provider eases the pain of having to pass store as props to every component
+
+
+// Redux-toolkit:
+npm install @reduxjs/toolkit react-redux
+how redux toolkit different from redux:
+less boiler plate code 
+when you use redux it gives warning like add middleware or thunk so Redux toolkit as it comes with createAsyncThunk. This enables you to perform async operations.
+Redux Toolkit includes a built-in memoization feature that can help improve the performance of your Redux application by reducing unnecessary re-renders.
+
+1.configure the store where we put all the state of application ===> we import configure store from redux toolkit (in redux we use createStore from redux) and we add object which have all the reducers.
+
+2.we provide this store in index.js file using provider
+3.instead of actions in old redux, in toolkit we create a slice
+4. in slice ,we define a initial state of that slice. in redux actions are just normal object with type and payload but in toolkit actions are a functions
+5. using createAsyncThunk we can perform async operation for getting data from api
+6. createAsyncThunk takes 2 parameter (Redux action type string and a callback function )
+
+7. when we create a slice it takes object with keys like name,initialstate,reducers,extraReducer
+8.reducers are like actions like if we want to set empty state or remove something from local storage then we write these into reducers part
+we export them like this export const {setUserLogOut,setLoader} =  AuthSlice.actions;
+
+9.extraReducers includes all these functions which we are written using createAsyncThunk--- as we know createAsyncThunk returns a promise so it has three state pending,fulfilled, rejected
+signup=createAsyncThunk("signup",()=>{})
+extraReducer:{
+    [signup.pending]:(state,action)=>{
+
+    }
+
+}
+
+Recoil :is state management library in ringover we used to persist that data into local storage 
+
+ REACT QUERY:
+ react query is data management or state management library which gives you a power and control over server side state management, fetching nad caching of data,error handling in simple and declarative way like normal application we fetch the data in useeffect and we take another loading state to check whether it is loading or not. but in react query usequery hook return data, loading,error,refetch all state.
+
+ react query allows you to manipulate data (when we use filters and all) it caches the data and it synchronize the data
+
+ main features
+ fetching, caching, synchronizing and updating server state 
+ caching: window focus refetching
+ prefetching-It is able to pre-fetch data depending if your application needs fresh data after an update network request. It is able to update data in the background.
+
+
+ REDUX-SAGA:
+ redux saga is a middleware library for redux that is used to manage side effects in your redux apps. the side effects means handling asynchronous API calls,handling timers or interacting with browser storage.
+
+ 1. handles side effects using generator functions.
+ 2. can write logic for handling side effects seperately.
+ 3.provides built in  support for cancelling  and aborting asynchronous operation.
+ 4.allows to handle multiple asynchronous operation concurrently.
+you can use redux toolkit for asynchronous operations but saga provides more declarative control for handling a side effects
+
+GENERATOR FUNCTION
+generator function are special type of functions in js that can be paused and resumed during their execution.it uses the special keyword "yield". the generator function defined using function* funName(). when this function is called it returns an iterator objects called as generator object
+
+function* myGenerator() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+const generator = myGenerator();
+console.log(generator);
+
+console.log(generator.next()); // { value: 1, done: false }
+console.log(generator.next()); // { value: 2, done: false }
+console.log(generator.next()); // { value: 3, done: false }
+console.log(generator.next()); // { value: undefined, done: true }
+generator is an object and we care calling next method on this object, the generator function is executed until it encounters a yield statement. The value property of the object returned by generator.next() contains the value yielded by the generator.
