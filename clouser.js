@@ -1,11 +1,13 @@
-function x(){
-    var a=10;
-    function y(){
-        console.log(a);
-    }
-    return y;
+function x() {
+  var a = 10;
+  let b = "mariya";
+  function y() {
+    console.log(a, b);
+  }
+  return y;
+  y();
 }
-var z=x();
+var z = x();
 console.log(z);
 z();
 
@@ -26,22 +28,22 @@ z();
 // console.log(o);
 // o();
 
-// the ouput is 100 but why?when we returnning a function y , y has the reference of a, after execuring the line a=100; the memery of a changed 10 to 100, so when we invoke a function y it's points a memory which has a value 100.
+// the ouput is 100 but why?when we returnning a function y , y has the reference of a, after executing the line a=100; the memery of a changed 10 to 100, so when we invoke a function y it's points a memory which has a value 100.
 
-// function a(){
-//     var b=100;
-//     function c(){
-//         var d=10;
-//         function e(){
-//             console.log(d,b)
-//         }
-//         e();
-//     }
-//     c();
-// }
-// a();
+function a() {
+  var b = 100;
+  function c() {
+    var d = 10;
+    function e() {
+      console.log(d, b);
+    }
+    e();
+  }
+  c();
+}
+a();
 
-// function e still makes clouser of (c) and clouser of a with it's lexiacal envrionment
+// function e still makes clouser of (c) and clouser of (a) with it's lexical envrionment
 
 //INTERVIEW QUEATION BASED ON SETTIMEOUT AND CLOUSER
 
@@ -52,7 +54,7 @@ z();
 //     for(var i=1;i<=5;i++){
 //         setTimeout(()=>{
 //             console.log(i)
-//         },i*1000) 
+//         },i*1000)
 //     }
 // }
 // print();
@@ -66,7 +68,7 @@ z();
 //     for(let i=1;i<=5;i++){
 //         setTimeout(()=>{
 //             console.log(i)
-//         },i*1000) 
+//         },i*1000)
 //     }
 // }
 // print1();
@@ -81,7 +83,7 @@ z();
 //         function clouser(x){
 //         setTimeout(()=>{
 //             console.log(x)
-//         },x*1000) 
+//         },x*1000)
 //     }
 //     clouser(i)
 // }
@@ -92,17 +94,17 @@ z();
 //when we run the program the callback function of settime stores the refernce of it's parent lexical scope
 // in first pass clouser(1)=>>> settimeout refer the x=1
 //in second pass clouser(2)=>>>settimeout refer the x=2 lke wise
-let m=true;
-setTimeout(()=>{
-     m=false;
-    console.log("hello");
-},1000);
-m=false;
+let m = true;
+setTimeout(() => {
+  m = false;
+  console.log("hello");
+}, 1000);
+// m = false;
 
 setInterval(() => {
-    if(m){
-        console.log("hmmm");
-    }   
+  if (m) {
+    console.log("hmmm");
+  }
 }, 200);
 // while(m)
 // {
@@ -110,16 +112,13 @@ setInterval(() => {
 // }
 
 // remove duplicates from array
-const arr=["Mariya","sada",1,2,3,2,4,1,"Mariya","sada",4,6,7];
-console.log(arr.filter((item,index)=>arr.indexOf(item)===index));
+const arr = ["Mariya", "sada", 1, 2, 3, 2, 4, 1, "Mariya", "sada", 4, 6, 7];
+console.log(arr.filter((item, index) => arr.indexOf(item) === index));
 
 //second method
-const unique=[...new Set(arr)];
+const unique = [...new Set(arr)];
 
 // third
-console.log(arr.reduce((acc,arr)=>acc.includes(arr)?acc:[...acc,arr],[]));
-
-
-
-
-
+console.log(
+  arr.reduce((acc, arr) => (acc.includes(arr) ? acc : [...acc, arr]), [])
+);

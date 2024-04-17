@@ -93,3 +93,6 @@ console.log(generator.next()); // { value: 2, done: false }
 console.log(generator.next()); // { value: 3, done: false }
 console.log(generator.next()); // { value: undefined, done: true }
 generator is an object and we care calling next method on this object, the generator function is executed until it encounters a yield statement. The value property of the object returned by generator.next() contains the value yielded by the generator.
+
+
+// Redux saga

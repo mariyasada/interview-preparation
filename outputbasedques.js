@@ -154,6 +154,8 @@ console.log(a[b]); //999 because when we add a key to any object it sets as a st
   console.log(y); // 2 because we set y
 })();
 
+// in the catch block we declared x as a catch parameter and sets the value 1 into x. y is the outer y so that's why we can access outer catch block
+
 console.log(parseInt("10+f2")); //10// parseint try to convert string into integer so first it check whether string includes any number at the starting of the string if yes then it returns that  as a number
 console.log(parseInt("7f")); //7
 console.log(parseInt("fmariya2")); //NaN

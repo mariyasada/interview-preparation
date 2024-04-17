@@ -1,19 +1,33 @@
-document.querySelector("#grandParent").addEventListener("click",()=>{
+document.querySelector("#grandParent").addEventListener(
+  "click",
+  () => {
     console.log("grandparent click");
-},false)
-document.querySelector("#parent").addEventListener("click",(e)=>{
+  },
+  false
+);
+document.querySelector("#parent").addEventListener(
+  "click",
+  (e) => {
     console.log("parent click");
-},false)
-document.querySelector("#child").addEventListener("click",(e)=>{
+  },
+  false
+);
+document.querySelector("#child").addEventListener(
+  "click",
+  (e) => {
     console.log("child click");
     e.stopImmediatePropagation();
     //e.stopPropagation();
-     
-},true)
-document.querySelector("#child").addEventListener("click",(e)=>{
+  },
+  true
+);
+document.querySelector("#child").addEventListener(
+  "click",
+  (e) => {
     console.log("child click 3");
-    
-},true)
+  },
+  true
+);
 
 // here when we adding eventlistner it takes three parameter , event,callback,usecapture. if usecapture is true then event capturing happents, by default it is false so event bubbling happened
 
@@ -50,7 +64,6 @@ document.querySelector("#child").addEventListener("click",(e)=>{
 //output is grandparent click,child click, parent click when we click child div
 // when we click parent div, grandparent click,parent click
 
-
 // //document.querySelector("#grandParent").addEventListener("click",()=>{
 //     console.log("grandparent click");
 // },false)
@@ -68,5 +81,5 @@ document.querySelector("#child").addEventListener("click",(e)=>{
 //but it check where you click suppose clickig child then firt it captures and then bubbles
 //grandparent,child and parent
 
-// how to stop propogation, there is method stoppropogation, if we will add to on second ebvent then it stops event capturing and bubbling at that time 
+// how to stop propogation, there is method stoppropogation, if we will add to on second ebvent then it stops event capturing and bubbling at that time
 // in top of the output is grandparent click,parent click
